@@ -19,7 +19,7 @@ router.post('/signin',async(req,res)=>{
         await newUser.save();
         return res.status(200).json({message: 'Created User successfully',user:newUser});
     }catch(err) {
-        return res.status(500).json({message: `erroe hilw creating user error: ${err}`});
+        return res.status(500).json({message: `erroe while creating user error: ${err}`});
     }
 })
 
