@@ -8,17 +8,21 @@ const Sidebar = () => {
     <div className='h-screen w-72 bg-zinc-900 text-white p-6 flex flex-col gap-8 shadow-md border-r-2 border-zinc-500'>
 
       <div className='flex flex-col items-center gap-4 border-b border-zinc-700 pb-6'>
-        <img
-          src="./profile.jpg"
-          alt="Profile"
-          className='rounded-full h-20 w-20 ring-2 ring-indigo-500 shadow-md'
-        />
+        <Link
+          to={'/dashboard'}
+        >
+          <img
+            src='/profile.jpg'
+            alt="Profile"
+            className='rounded-full h-20 w-20 ring-2 ring-indigo-500 shadow-md'
+          />
+        </Link>
         <h1 className='text-lg font-semibold'>Rat</h1>
         <div className='flex gap-2'>
-          <button className='text-xs px-3 py-1 bg-indigo-600 hover:bg-indigo-700 rounded'>
+          <button className='text-xs px-3 py-1 bg-indigo-600 hover:bg-indigo-700 rounded cursor-pointer'>
             Edit
           </button>
-          <button className='text-xs px-3 py-1 border border-zinc-500 hover:border-white rounded'>
+          <button className='text-xs px-3 py-1 border border-zinc-500 hover:border-white rounded cursor-pointer'>
             Profile
           </button>
         </div>
@@ -36,7 +40,7 @@ const Sidebar = () => {
         <div className='flex flex-col gap-2 text-sm text-zinc-300'>
           {['project-1', 'project-2', 'project-3', 'project-4'].map((project, idx) => (
             <Link
-              to={`/projects/${project}`}
+              to={`/dashboard/${project}`}
               key={idx}
               className='px-3 py-2 rounded-md hover:bg-zinc-800 hover:text-white transition cursor-pointer'
             >
